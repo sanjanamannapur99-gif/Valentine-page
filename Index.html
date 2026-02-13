@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Developer ❤️</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #ffccd5, #ffe6eb);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 35px;
+    color: #fff;
+}
+
+.highlight {
+    color: #ff0066;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #ff4d88;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    margin: 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background-color: #ff4d88;
+    color: white;
+}
+
+#noBtn {
+    background-color: grey;
+    color: white;
+    position: absolute;
+}
+
+.heart {
+    position: fixed;
+    bottom: 0;
+    color: red;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    from {transform: translateY(0);}
+    to {transform: translateY(-100vh);}
+}
+</style>
+</head>
+<body>
+
+<h1>Hey <span class="highlight">Developer</span> 💻❤️</h1>
+<h2>Will you be my Valentine? 💖</h2>
+
+<button id="yesBtn" onclick="sayYes()">Yes ❤️</button>
+<button id="noBtn" onmouseover="moveNo()">No 😜</button>
+
+<!-- Start page image: girl holding rose -->
+<div style="margin-top:15px;">
+    <img src="https://i.ibb.co/9g8P8vS/start.png" 
+         style="width:230px; display:block; margin:auto; margin-top:20px;">
+</div>
+
+<script>
+function sayYes() {
+    document.body.innerHTML = `
+    <div style="text-align:center; margin-top:80px; color:white; font-family: Arial;">
+        <h1 style="font-size:45px;">Happy Valentine's Day Sahebre ❤️</h1>
+        <p style="font-size:22px; width:80%; margin:auto; margin-top:20px;">
+        You are not just my Developer 💻<br><br>
+        You are my comfort, my happiness, my safe place ❤️<br><br>
+        In every lifetime, I would still choose you Sahebre 💍✨<br><br>
+        Forever yours ❤️
+        </p>
+        <div style="margin-top:20px;">
+            <img src="https://i.ibb.co/jH3B5R7/hug.png"
+                 style="width:260px; display:block; margin:auto; margin-top:20px;">
+        </div>
+    </div>
+    `;
+}
+
+function moveNo() {
+    var x = Math.random() * window.innerWidth;
+    var y = Math.random() * window.innerHeight;
+    document.getElementById("noBtn").style.left = x + "px";
+    document.getElementById("noBtn").style.top = y + "px";
+}
+
+// Floating hearts
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}, 500);
+</script>
+
+</body>
+  </html>
